@@ -1,5 +1,5 @@
 import { useState } from "react";
-function FormularioTarefa() {
+function FormularioTarefa({ onAdicionarTarefa }) {
   const [nome, setNome] = useState("");
   const [data, setData] = useState("");
   const [descricao, setDescricao] = useState("");
@@ -25,7 +25,7 @@ function FormularioTarefa() {
     concluida: false,
   };
 
-  console.log(novaTarefa);
+  onAdicionarTarefa(novaTarefa);
 
   setNome("");
   setData("");
