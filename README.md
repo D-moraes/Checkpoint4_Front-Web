@@ -34,4 +34,5 @@ O projeto está organizado utilizando componentes React, separando as principais
 
 ## Repositório
 
-Link do GitHub: COLOCAR LINK DO REPOSITÓRIO AQUI
+Link do GitHub: 
+https://github.com/D-moraes/Checkpoint4_Front-Web.git
