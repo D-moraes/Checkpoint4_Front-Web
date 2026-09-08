@@ -4,23 +4,42 @@ function FormularioTarefa() {
   const [data, setData] = useState("");
   const [descricao, setDescricao] = useState("");
   const [prioridade, setPrioridade] = useState("");
+  const [erro, setErro] = useState("");
   
   function handleSubmit(evento) {
-    evento.preventDefault();
+  evento.preventDefault();
 
-    console.log({
-      nome,
-      data,
-      descricao,
-      prioridade
-    });
+  if (!nome || !data || !descricao || !prioridade) {
+    setErro("Preencha todos os campos da tarefa.");
+    return;
   }
+
+  setErro("");
+
+  const novaTarefa = {
+    id: Date.now(),
+    nome,
+    data,
+    descricao,
+    prioridade,
+    concluida: false,
+  };
+
+  console.log(novaTarefa);
+
+  setNome("");
+  setData("");
+  setDescricao("");
+  setPrioridade("");
+}
 
   return (
     <section>
       <h2>Nova Tarefa</h2>
 
       <form onSubmit={handleSubmit}>
+        {erro && <p>{erro}</p>}
+        
         <div>
           <label htmlFor="nome">Nome da tarefa</label>
           <input
