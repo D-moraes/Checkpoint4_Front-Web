@@ -4,6 +4,17 @@ function FormularioTarefa() {
   const [data, setData] = useState("");
   const [descricao, setDescricao] = useState("");
   const [prioridade, setPrioridade] = useState("");
+  
+  function handleSubmit(evento) {
+    evento.preventDefault();
+
+    console.log({
+      nome,
+      data,
+      descricao,
+      prioridade
+    });
+  }
 
   return (
     <section>
