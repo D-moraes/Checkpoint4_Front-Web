@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 import FormularioTarefa from "./components/FormularioTarefa";
 import ListaTarefas from "./components/ListaTarefas";
@@ -7,7 +7,15 @@ import Filtros from "./components/Filtros";
 function App() {
   // HOOK: useState cria e controla os estados do componente. 
   // "tarefas" armazena a lista de tarefas e "setTarefas" atualiza essa lista.
-  const [tarefas, setTarefas] = useState([]);
+  const [tarefas, setTarefas] = useState(()=>{
+    const tarefasSalvas = localStorage.getItem("tarefas");
+
+    return tarefasSalvas ? JSON.parse(tarefasSalvas) : [];
+  });
+  
+  useEffect(()=> {
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+  }, [tarefas]);
 
   // HOOK: useState também é utilizado para controlar qual filtro está selecionado.
   const [filtro, setFiltro] = useState("todas");
