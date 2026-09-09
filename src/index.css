@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap');
+
+:root {
+  --color1: #0b0614;
+  --color2: #160d24;
+  --color3: #ffffff;
+  --color4: #d8c8e8;
+  --color5: #3b2355;
+  --color6: #7040a0;
+  --color7: #8b5cf6;
+  --color8: #a78bfa;
+  --color9: #b9a6c9;
+  --color10: #5b1835;
+  --color11: #ffc4df;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--color1);
+    color: var(--color4);
+    min-height: 100vh;
+}
+
+main{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+h1{
+    text-align: center;
+    color: var(--color3);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    -webkit-text-stroke: 1px var(--color7);
+    text-shadow: 0 0 4px var(--color7), 0 0 8px var(--color7);
+}
+h2{
+    color: var(--color3);
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+h3{
+    color: var(--color3);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+section{
+    background: var(--color2);
+    border: 1px solid var(--color5);
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+/* FORMULARIO */
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+label{
+    color: var(--color4);
+    font-weight: bold;
+}
+input,
+textarea,
+select{
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--color6);
+    border-radius: 8px;
+    background: var(--color1);
+    color: var(--color3);
+    font-size: 14px;
+}
+input[type="date"]{
+  color-scheme: dark;
+}
+input:focus,
+textarea:focus,
+select:focus{
+    outline: none;
+    border-color: var(--color7);
+}
+textarea{
+    min-height: 90px;
+    resize: vertical;
+}
+
+button{
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    background: var(--color7);
+    color: var(--color3);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover{
+    background: var(--color8);
+    transform: translateY(-1px);
+}
+button:disabled{
+    background: var(--color5);
+    color: var(--color9);
+    cursor: not-allowed;
+    transform: none;
+}
+
+form button{
+  width: 100%;
+  margin-top: 5px;
+}
+
+form p{
+  background: var(--color10);
+  color: var(--color11);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+/* FILTROS */
+
+section:nth-of-type(2){
+  text-align: center;
+}
+section:nth-of-type(2) button{
+  margin: 4px;
+}
+
+/* LISTA DE TAREFAS */
+
+article{
+  background: var(--color1);
+  border: 1px solid var(--color5);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: 0.2s;
+}
+article:hover{
+  border-color: var(--color7);
+  transform: translateY(-2px);
+}
+article p{
+  color: var(--color4);
+  margin-bottom: 9px;
+  line-height: 1.5;
+}
+article strong{
+  color: var(--color3);
+}
+
+article button{
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px){
+  main{
+    width: 94%;
+    padding: 25px 0;
+  }
+  h1{
+    font-size: 25px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  section{
+    padding: 18px;
+  }
+  article{
+    padding: 16px;
+  }
+  article button{
+    width: 100%;
+    margin-right: 0;
+    margin-top: 8px;
+  }
+  section:nth-of-type(2) button{
+    width: 100%;
+    margin: 5px 0;
+  }
+}
