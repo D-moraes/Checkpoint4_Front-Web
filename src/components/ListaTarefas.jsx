@@ -1,15 +1,15 @@
 
 import Tarefa from "./Tarefa";
 
-
 function ListaTarefas( {
   tarefas,
   filtro,
   onConcluirTarefa,
   onRemoverTarefa,
 }) {
-  // filter() cria uma nova lista contendo apenas as tarefas
-  // que correspondem ao filtro selecionado pelo usuário.
+  
+  // MÉTODO DE ARRAY: filter cria um novo array somente com as tarefas 
+  // que atendem à condição do filtro selecionado.
   const tarefasFiltradas = tarefas.filter((tarefa) => {
     if (filtro === "pendentes") {
       return !tarefa.concluida;
@@ -31,8 +31,8 @@ function ListaTarefas( {
       {tarefasFiltradas.length === 0 ? (
         <p>Nenhuma tarefa encontrada.</p>
       ) : (
-        // map() percorre a lista filtrada e cria um componente
-        // Tarefa para cada tarefa existente.
+        // MÉTODO DE ARRAY: map percorre as tarefas filtradas 
+        // e cria um componente Tarefa para cada item do array.
         tarefasFiltradas.map((tarefa) => (
           <Tarefa
             key={tarefa.id}

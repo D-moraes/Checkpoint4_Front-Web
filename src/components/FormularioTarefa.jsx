@@ -41,7 +41,7 @@ function FormularioTarefa({ onAdicionarTarefa }) {
         {erro && <p>{erro}</p>}
         
         <div>
-          <label htmlFor="nome">Nome da tarefa</label>
+          <label htmlFor="nome">Nome da tarefa:</label>
           <input
           id = "nome"
           type = "text"
@@ -51,7 +51,7 @@ function FormularioTarefa({ onAdicionarTarefa }) {
         </div>
 
         <div>
-          <label htmlFor="data">Data</label>
+          <label htmlFor="data">Data:</label>
           <input
           id = "data"
           type = "date"
@@ -61,7 +61,7 @@ function FormularioTarefa({ onAdicionarTarefa }) {
         </div>
 
         <div>
-          <label htmlFor="descricao">Descrição</label>
+          <label htmlFor="descricao">Descrição:</label>
           <textarea
           id = "descricao"
           value = {descricao}
@@ -70,7 +70,7 @@ function FormularioTarefa({ onAdicionarTarefa }) {
         </div>
 
         <div>
-          <label htmlFor="prioridade">Nível de prioridade</label>
+          <label htmlFor="prioridade">Nível de prioridade:</label>
           <select
           id = "prioridade"
           value = {prioridade}
